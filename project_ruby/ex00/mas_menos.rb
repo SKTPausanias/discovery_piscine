@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 sol = rand 0..100
 difficulty = 5
-puts sol.to_s
+#puts sol.to_s
 
 while difficulty > 0
 	print "Introduzca un número: "
