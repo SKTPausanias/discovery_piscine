@@ -2,5 +2,5 @@
 if ARGV.size < 1
 	puts "none"
 else
-	ARGV.each { |n| if (!n.match('ismo')) then puts "#{n[0..-2]}" + "ismo" end}
+	ARGV.each { |n| if (!n.match(/ismo\z/)) then puts "#{n[0..-2]}" + "ismo" end}
 end
