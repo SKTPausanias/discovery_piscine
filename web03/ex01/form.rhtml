@@ -13,7 +13,7 @@
 </form> 
 
 <%=
-if (servlet_request.query['fname'])
+if (servlet_request.query['fname']) and servlet_request.query['fname'] != ""
   "Hola, " + servlet_request.query['fname'] + " " + servlet_request.query['lname']
 end
 %>

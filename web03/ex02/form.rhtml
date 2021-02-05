@@ -16,19 +16,19 @@
 
 <%=
 users = [['Jaime', 'loco', '43'], ['Aaime', 'loco', '32']]
-if servlet_request.query['fname']
+if servlet_request.query['fname'] and servlet_request.query['fname'] != ""
   users.push([servlet_request.query['fname'], servlet_request.query['lname'], servlet_request.query['edad']])
-end
-users = users.sort_by{|a| a[2]}
-i = 0
-while i < users.size
-  if (users[i][0] == servlet_request.query['fname'] and users[i][1] == servlet_request.query['lname'])
-    break
+  users = users.sort_by{|a| a[2]}
+  i = 0
+  while i < users.size
+    if (users[i][0] == servlet_request.query['fname'] and users[i][1] == servlet_request.query['lname'])
+      break
+    end
+    i += 1
   end
-  i += 1
+  res = users.size - i - 1
+  "Hola, " + servlet_request.query['fname'] + ", tiene mas edad que " + (i).to_s + " personas y menos edad que " + (res).to_s + " personas"
 end
-res = users.size - i - 1
-"Hola, " + servlet_request.query['fname'] + ", tiene mas edad que " + (i).to_s + " personas y menos edad que " + (res).to_s + " personas"
 %>
 
 </body>

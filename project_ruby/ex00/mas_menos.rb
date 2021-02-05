@@ -8,17 +8,15 @@ while difficulty > 0
 	num = gets.chomp.to_i
 	if num < 0 or num > 100
 		puts "Ese número no está comprendido entre 0 y 100"
-	else
-		if num == sol
-			puts "¡Lo ha encontrado!"
-			break
-		elsif num > sol && difficulty > 1
-			puts "- número de intentos pendientes: " + (difficulty - 1).to_s
-		elsif difficulty > 1
-			puts "+ número de intentos pendientes: " + (difficulty - 1).to_s
-		end
-		difficulty -= 1
+	elsif num == sol
+		puts "¡Lo ha encontrado!"
+		break
+	elsif num > sol && difficulty > 1
+		puts "- número de intentos pendientes: " + (difficulty - 1).to_s
+	elsif difficulty > 1
+		puts "+ número de intentos pendientes: " + (difficulty - 1).to_s
 	end
+	difficulty -= 1
 end
 if num != sol
 	puts "¡Ha perdido! El número era " + sol.to_s
