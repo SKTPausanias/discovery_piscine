@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<%=
+	File.open("web04/ex01/log.txt", "w") { |f| f.write "#{Time.now} - User logged in\n" }
+%>
+
+</body>
+</html>
